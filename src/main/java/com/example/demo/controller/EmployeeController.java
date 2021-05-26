@@ -17,14 +17,20 @@ public class EmployeeController {
 	private EmployeeService employeeService;
 	
 	@GetMapping("/")
-	public String viewHomePage(Model model, String keyword) {
+	public String viewDashboard() {
+		
+		return "dashboard";
+	}
+	
+	@GetMapping("/employeeList")
+	public String viewEmployeeList(Model model, String keyword) {
 		if(keyword != null) {
 			model.addAttribute("listEmployees", employeeService.findByKeyword(keyword));
 		}
 		else {
 			model.addAttribute("listEmployees", employeeService.getAllEmployee());
 		}
-		return "index";
+		return "employeeList";
 	}
 	@GetMapping("/showAddNewEmployeeForm")
 	public String showAddNewEmployeeForm(Model model) {
