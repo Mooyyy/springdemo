@@ -9,8 +9,7 @@
 <div th:insert="fragments/general.html"> </div>
 	<div align="center">
 	<h1>Employee List</h1>
-	<a th:href="@{/showAddNewEmployeeForm}">Add Employee</a>
-	<form th:action="@{/}" method="GET">
+	<form th:action="@{/employeeList}" method="GET">
 	<input type="text" name="keyword">
 	<button type="submit">Search</button>
 	</form>
