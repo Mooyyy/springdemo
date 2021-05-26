@@ -6,6 +6,7 @@
 <title>Employee Information System</title>
 </head>
 <body>
+<div th:insert="fragments/general.html"> </div>
 	<div align="center">
 	<h1>Employee List</h1>
 	<a th:href="@{/showAddNewEmployeeForm}">Add Employee</a>
@@ -13,13 +14,13 @@
 	<input type="text" name="keyword">
 	<button type="submit">Search</button>
 	</form>
-	<table border="1">
+	<table class="table text-center" border="1">
 		<thead>
 			<tr>
-			<th>Employee First Name</th>
-			<th>Employee Last Name</th>
-			<th>Employee Role</th>
-			<th>Actions</th>
+			<th class="text-center">Employee First Name</th>
+			<th class="text-center">Employee Last Name</th>
+			<th class="text-center">Employee Role</th>
+			<th class="text-center">Actions</th>
 			</tr>
 		</thead>	
 		<tbody>
@@ -27,8 +28,10 @@
 			<td th:text = "${employee.firstName}"></td>
 			<td th:text = "${employee.lastName}"></td>
 			<td th:text = "${employee.role}"></td>			
-			<td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Update</a></td>
-			<td><a th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a></td>
+			<td>
+			<a class="btn btn-success" th:href="@{/showFormForUpdate/{id}(id=${employee.id})}">Update</a>
+			<a class="btn btn-danger" th:href="@{/deleteEmployee/{id}(id=${employee.id})}">Delete</a>
+			</td>
 		</tr>
 		</tbody>
 	</table>
