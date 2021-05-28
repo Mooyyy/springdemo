@@ -1,15 +1,23 @@
 @charset "ISO-8859-1";
 h1{
-	color: blue;
-	text-align: center;
+	color: #191817;
+	font-weight: normal;
 }
 
 table{
 	border-collapse: collapse;
-	
 }
 
-th{
-	text-align: left;
-	
+body {
+background-color: #fff8f0 !important;
+margin-bottom:50px;
+
+}
+footer {
+	position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
 }
