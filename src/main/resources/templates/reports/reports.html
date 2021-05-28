@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div th:insert="fragments/general.html :: header"> </div>
+      <hr class="my-1">
+	  <div class="container py-1">
+	  		<canvas id="myChart"></canvas>
+	  </div><hr>
+		<footer th:replace="fragments/general.html :: footer"></footer>
+</body>
+</html>
+		<script>
+		var xValues = ["PMO", "Bridge SE", "Software Engineer", "Instructor"];
+		var yValues = [5, 8, 20, 3];
+		var barColors = [
+		  "#b91d47",
+		  "#00aba9",
+		  "#2b5797",
+		  "#e8c3b9",
+		  "#1e7145"
+		];
+		
+		new Chart("myChart", {
+		  type: "pie",
+		  data: {
+		    labels: xValues,
+		    datasets: [{
+		      backgroundColor: barColors,
+		      data: yValues
+		    }]
+		  },
+		  options: {
+		    title: {
+		      display: true,
+		      text: "Employee Roles (Dummy Pie Chart)"
+		    }
+		  }
+		});
+		</script>
