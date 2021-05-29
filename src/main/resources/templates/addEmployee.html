@@ -9,9 +9,7 @@
 </head>
 <body>
 	<div th:insert="fragments/general.html :: header"> </div><br>
-
 		<h2 class="font-weight-normal" style="text-indent: 50px;"><i class="bi bi-person-plus-fill"></i> ADD EMPLOYEE</h2><hr>
-
 			<form class="form-horizontal container mt-5" th:action="@{/saveEmployee}" th:object="${employee}" method="POST" style="margin:0 auto; width:35%;">
 				<label class="font-weight-normal">First Name</label>
 				<input class="form-control" type="text" th:field="*{FirstName}" autocomplete="off" style="width:500px;"><br>
@@ -24,17 +22,12 @@
 					      <option value="Instructor">Instructor</option>
 					      <option value="Software Engineer">Software Engineer</option>
 					      <option value="Bridge SE">Bridge SE</option>
-					      
 				 </select><br>
-				 
 				<div style="margin:0 auto; width:55%">
 					<button class="btn btn-success" type="submit">Save Employee</button>&nbsp;
 					<a class="btn btn-primary" th:href="@{/employeeList}">Back to List</a>
 				</div>
 			</form>
-
-
-
 </body>
 </html>
 
